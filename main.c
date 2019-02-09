@@ -85,7 +85,7 @@ int predicate(Movie* movie) {
 MovieLen* add(MovieLen* movies, Movie* movie) {
 	if (movie == NULL) return movies;
 
-	movies->movies = (Movie**) realloc(movies->movies, sizeof(Movie*) * ++movies->len);
+	movies->movies = (Movie**) realloc(movies->movies, ++movies->len * sizeof(Movie*));
 	movies->movies[movies->len] = movie;
 	movies->movies[movies->len - 1] = movie;
 
